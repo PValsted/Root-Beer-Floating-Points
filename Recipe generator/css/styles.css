@@ -6,7 +6,6 @@ body, h1, h2, p, ul {
 
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
     background-color: #f8f8f8;
     color: #333;
 }
@@ -91,7 +90,6 @@ img {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s;
 }
 
 #video-pitch a:hover {
