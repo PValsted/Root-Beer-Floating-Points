@@ -1,4 +1,4 @@
-body, h1, h2, p, ul {
+body, h1, h3,p, ul {
     margin: 0;
     padding: 0;
 }
@@ -75,6 +75,14 @@ section {
     padding: 10px;
 }
 
+.scenarios p, .user-stories p{
+    padding-bottom: 10px;
+}
+
+.feature-list h2{
+    padding-bottom: 10px;
+}
+
 footer {
     background-color: #333;
     color: white;
@@ -82,7 +90,7 @@ footer {
     padding: 10px 0;
 }
 
-.persona-footer{
+.persona-footer, .feature-list-footer{
     position: fixed;
     bottom: 0;
     left: 0;
