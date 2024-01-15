@@ -71,8 +71,22 @@ section {
     padding: 20px;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .persona p{
     padding: 10px;
+    float: left;
+}
+
+.persona-img{
+    height: 150px;
+    width: 150px;
+    float: left;
+    padding: 20px;
 }
 
 .scenarios p, .user-stories p{
