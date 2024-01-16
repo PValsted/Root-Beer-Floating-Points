@@ -95,8 +95,20 @@ section {
     padding-bottom: 10px;
 }
 
-.feature-list h2{
-    padding-bottom: 10px;
+
+b {
+   color: #4CAF50;
+}
+
+li{
+    font-size: larger;
+}
+
+.feature-list{
+   display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
 }
 
 footer {
