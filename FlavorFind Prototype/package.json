@@ -1,0 +1,19 @@
+{
+  "name": "flavorfind-prototype",
+  "version": "1.0.0",
+  "description": "FlavorFind App Prototype",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PValsted/Root-Beer-Floating-Points.git"
+  },
+  "author": "Chris,Rheann,Matthew,Patrick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PValsted/Root-Beer-Floating-Points/issues"
+  },
+  "homepage": "https://github.com/PValsted/Root-Beer-Floating-Points"
+}
