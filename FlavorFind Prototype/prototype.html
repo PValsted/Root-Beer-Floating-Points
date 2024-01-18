@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/prototypeStyles.css">
+    <title>FlavorFind</title>
+</head>
+<body>
+
+    <h1>FlavorFind</h1>
+
+    <label for="cuisineType">Select Cuisine Type:</label>
+    <select id="cuisineType">
+        <!-- Add options for different cuisine types -->
+        <option value="italian">Italian</option>
+        <option value="indian">Indian</option>
+        <!-- Add more options as needed -->
+    </select>
+
+    <button id="generateButton">Generate Recipe</button>
+
+    <div id="recipeContainer">
+        <h1 id="recipe-title"></h1>
+        <p id="instructions"></p>
+        
+    </div>
+    <div id="recipe-image-container"></div>
+    <div id="steps-container"></div> <!-- container for recipe instructions -->
+
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
