@@ -10,9 +10,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get the selected cuisine type
     const cuisineSelect = document.getElementById("cuisineType");
     const selectedCuisine = cuisineSelect.value;
+    
+    // Get the selected intolerance
+    const glutenFree = document.getElementById("glutenFree");
+    const dairyFree = document.getElementById("dairyFree");
+    const intolerances = [];
+      if (glutenFree.checked==true)
+        intolerances.push("gluten");
 
-    // Construct the URL for complexSearch to get a random recipe with the specified cuisine
-    const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}`;
+      if (dairyFree.checked==true)
+        intolerances.push("dairy");
+
+    const intoleranceValue = intolerances.join(",");
+    console.log(glutenFree.checked, dairyFree.checked);
+
+    // Construct the URL for complexSearch to get a random recipe with the specified cuisine with the intolerance
+    const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}&intolerance=${intoleranceValue}`;
 
     // Make the GET request to complexSearch
     fetch(complexSearchUrl)
@@ -90,4 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Attach the generateRecipe function to the button click event
   document.getElementById("generateButton").addEventListener("click", generateRecipe);
+
+  
 });
