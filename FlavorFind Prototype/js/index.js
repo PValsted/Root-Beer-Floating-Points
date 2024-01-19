@@ -1,16 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Wait for the DOM to be fully loaded
 
-  function generateRecipe() {
+  function generateRecipe(){
     const apiKey = "be875d51bd4444edac53deff89f0a0c2";
     const complexSearchEndpoint = "https://api.spoonacular.com/recipes/complexSearch";
     const analyzedInstructionsEndpoint = "https://api.spoonacular.com/recipes/{id}/analyzedInstructions";
+    const number = 1; // Only retrieving one random recipe
+    const sort = "random"; // Set to random for a random recipe
+
+    // Get the selected cuisine type
     const cuisineSelect = document.getElementById("cuisineType");
     const selectedCuisine = cuisineSelect.value;
-    const number = 10; // You can adjust this number as needed for complexSearch
+    
+    // Get the selected intolerance
+    const glutenFree = document.getElementById("glutenFree");
+    const dairyFree = document.getElementById("dairyFree");
+    const intolerances = [];
+      if (glutenFree.checked==true)
+        intolerances.push("gluten");
 
-    // Construct the URL for complexSearch to get a list of recipes for the selected cuisine
-    const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&cuisine=${selectedCuisine}&number=${number}`;
+      if (dairyFree.checked==true)
+        intolerances.push("dairy");
+
+    const intoleranceValue = intolerances.join(",");
+    console.log(glutenFree.checked, dairyFree.checked);
+
+    // Construct the URL for complexSearch to get a random recipe with the specified cuisine with the intolerance
+    const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}&intolerance=${intoleranceValue}`;
 
     // Make the GET request to complexSearch
     fetch(complexSearchUrl)
@@ -21,11 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.json();
       })
       .then(data => {
-        // Check if there are results
+        // Check if there is a result
         if (data.results && data.results.length > 0) {
-          // Randomly select one recipe from the list
-          const randomIndex = Math.floor(Math.random() * data.results.length);
-          const randomRecipe = data.results[randomIndex];
+          // Get the first (and only) random recipe from the list
+          const randomRecipe = data.results[0];
 
           // Log the selected recipe to the console
           console.log("Selected Recipe:", randomRecipe);
@@ -52,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Make the GET request to analyzedInstructions
           return fetch(analyzedInstructionsUrl);
         } else {
-          console.log("No recipes found for the selected cuisine.");
+          console.log("No recipes found.");
         }
       })
       .then(response => {
@@ -89,4 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Attach the generateRecipe function to the button click event
   document.getElementById("generateButton").addEventListener("click", generateRecipe);
+
+  
 });
