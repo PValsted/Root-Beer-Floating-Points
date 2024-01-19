@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/prototypeStyles.css">
+    <link rel="stylesheet" href="prototypeStyles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <title>FlavorFind</title>
 </head>
 <body>
-
+<div class="container text-center">
+    <div class="row">
     <h1>FlavorFind</h1>
 
     <label for="cuisineType">Select Cuisine Type:</label>
@@ -19,17 +21,29 @@
     </select>
 
     <button id="generateButton">Generate Recipe</button>
+    </div>
 
-    <div id="recipeContainer">
+
+<div class="row">
+    <div class="col">
+        <div id="recipeContainer">
         <h1 id="recipe-title"></h1>
         <p id="instructions"></p>
         
     </div>
+    
     <div id="recipe-image-container"></div>
-    <div id="steps-container"></div> <!-- container for recipe instructions -->
+    </div>
 
+    <div class="col">
+    <div id="steps-container"></div> <!-- container for recipe instructions -->
+    </div>  
 
     <script src="js/index.js"></script>
+    <script src ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</div>
 
+
+</div>
 </body>
 </html>
