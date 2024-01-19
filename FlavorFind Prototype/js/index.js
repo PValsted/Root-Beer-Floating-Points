@@ -1,13 +1,16 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
+  //This is the main function responsible for generating and displaying a random recipe
   function generateRecipe(){
+    //These variables store the API key and the endpoints for Spoonacular API
     const apiKey = "be875d51bd4444edac53deff89f0a0c2";
     const complexSearchEndpoint = "https://api.spoonacular.com/recipes/complexSearch";
     const analyzedInstructionsEndpoint = "https://api.spoonacular.com/recipes/{id}/analyzedInstructions";
     const number = 1; // Only retrieving one random recipe
     const sort = "random"; // Set to random for a random recipe
 
-    // Get the selected cuisine type
+    // Get the selected cuisine type from an HTML select element with the id "cuisineType."
     const cuisineSelect = document.getElementById("cuisineType");
     const selectedCuisine = cuisineSelect.value;
     
@@ -18,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (glutenFree.checked==true)
         intolerances.push("gluten");
 
+<<<<<<< HEAD
+    //This line constructs the URL for the Spoonacular API's complex search endpoint, including the API key, number of recipes, sort order, and selected cuisine.
+    const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}`;
+=======
       if (dairyFree.checked==true)
         intolerances.push("dairy");
 
@@ -26,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Construct the URL for complexSearch to get a random recipe with the specified cuisine with the intolerance
     const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}&intolerance=${intoleranceValue}`;
+>>>>>>> upstream/main
 
     // Make the GET request to complexSearch
     fetch(complexSearchUrl)
@@ -51,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const recipeImageContainer = document.getElementById("recipe-image-container");
 
           recipeTitle.textContent = randomRecipe.title;
-          instructions.textContent = randomRecipe.instructions || "No instructions available.";
+          instructions.textContent = randomRecipe.instructions 
 
           // Display the recipe image
           const recipeImage = document.createElement("img");
