@@ -17,23 +17,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get the selected intolerance
     const glutenFree = document.getElementById("glutenFree");
     const dairyFree = document.getElementById("dairyFree");
+    const shellfish = document.getElementById("shellfish");
     const intolerances = [];
       if (glutenFree.checked==true)
         intolerances.push("gluten");
 
-<<<<<<< HEAD
-    //This line constructs the URL for the Spoonacular API's complex search endpoint, including the API key, number of recipes, sort order, and selected cuisine.
-    const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}`;
-=======
       if (dairyFree.checked==true)
         intolerances.push("dairy");
 
+      if (shellfish.checked==true)
+        intolerances.push("shellfish");
+
     const intoleranceValue = intolerances.join(",");
-    console.log(glutenFree.checked, dairyFree.checked);
+    console.log(glutenFree.checked, dairyFree.checked, shellfish.checked);
 
     // Construct the URL for complexSearch to get a random recipe with the specified cuisine with the intolerance
     const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}&intolerance=${intoleranceValue}`;
->>>>>>> upstream/main
 
     // Make the GET request to complexSearch
     fetch(complexSearchUrl)
