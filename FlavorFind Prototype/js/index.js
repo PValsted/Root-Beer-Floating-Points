@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
   //This is the main function responsible for generating and displaying a random recipe
@@ -21,19 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (glutenFree.checked==true)
         intolerances.push("gluten");
 
-<<<<<<< HEAD
     //This line constructs the URL for the Spoonacular API's complex search endpoint, including the API key, number of recipes, sort order, and selected cuisine.
     const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}`;
-=======
-      if (dairyFree.checked==true)
-        intolerances.push("dairy");
-
-    const intoleranceValue = intolerances.join(",");
-    console.log(glutenFree.checked, dairyFree.checked);
-
-    // Construct the URL for complexSearch to get a random recipe with the specified cuisine with the intolerance
-    const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}&intolerance=${intoleranceValue}`;
->>>>>>> upstream/main
 
     // Make the GET request to complexSearch
     fetch(complexSearchUrl)
@@ -110,7 +98,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Attach the generateRecipe function to the button click event
-  document.getElementById("generateButton").addEventListener("click", generateRecipe);
-
-  
+  document.getElementById("generateButton").addEventListener("click", generateRecipe); 
 });
