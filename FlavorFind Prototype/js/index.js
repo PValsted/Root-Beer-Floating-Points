@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get the selected intolerance
     const glutenFree = document.getElementById("glutenFree");
     const dairyFree = document.getElementById("dairyFree");
+    const shellfish = document.getElementById("shellfish");
     const intolerances = [];
       if (glutenFree.checked==true)
         intolerances.push("gluten");
