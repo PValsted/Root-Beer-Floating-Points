@@ -21,13 +21,20 @@ Docker Instructions:
 To containerize the FlavorFind Prototype, please do the following:
 
 Clone the Root-Beer-Floating-Points repository onto your machine
+
 Open any terminal, and cd to the Root-Beer-Floating-Points/'FlavorFind Prototype' directory
+
 Enter the command 'docker build -t flavorfind .'
+
 Enter the command 'Docker run -p 3000:3000 flavorfind'
+
 You've successfully created a container with the prototype, you may navigate to the 'http://localhost:3000/' url in your browser
+
 
 To run the unit tests:
 
 Open any terminal, and cd to the Root-Beer-Floating-Points/'FlavorFind Prototype' directory
+
 Enter the command 'npm test'
+
 See the results of the 5 unit tests
