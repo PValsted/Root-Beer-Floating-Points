@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //This is the main function responsible for generating and displaying a random recipe
   function generateRecipe(){
     //These variables store the API key and the endpoints for Spoonacular API
-    const apiKey = "be875d51bd4444edac53deff89f0a0c2";
+    const apiKey = "19c5522da4ce41d2bfd486863e56f60b";
     const complexSearchEndpoint = "https://api.spoonacular.com/recipes/complexSearch";
     const analyzedInstructionsEndpoint = "https://api.spoonacular.com/recipes/{id}/analyzedInstructions";
     const number = 1; // Only retrieving one random recipe
