@@ -9,46 +9,50 @@
 </head>
 <body>
 <div class="container text-center">
-    <div class="row gy-2">
-    <h1>FlavorFind</h1>
+    <div class="row gy-4" style="background-color: #4CAF50;">
+    <h1 class="display-3">FlavorFind</h1>
+    <p class="lead">
+        Simply choose a cuisine, a substitution if needed, and FlavorFind will generate a custom recipe.
+      </p>
+    <div class="form-floating">
+        <select id="cuisineType" class="form-select">
+            <!-- Add options for different cuisine types -->
+            <option selected>Select a Cuisine type</option>
+            <option value="italian">Italian</option>
+            <option value="indian">Indian</option>
+            <!-- Add more options as needed -->
+        </select>
+        <label for="cuisineType">Let's create a recipe</label>
+    </div>
 
-    <label for="cuisineType">Select Cuisine Type:</label>
-    <select id="cuisineType">
-        <!-- Add options for different cuisine types -->
-        <option value="italian">Italian</option>
-        <option value="indian">Indian</option>
-        <!-- Add more options as needed -->
-    </select>
+   
 
       <!--This is a rough outline for the dietary restrictions-->
-      <label>
-        <input id= "dairyFree" type="checkbox" name="intolerance" value="dairy"> Dairy-Free
-    </label>
-    <label>
-        <input id= "glutenFree" type="checkbox" name="intolerance" value="gluten"> Gluten-Free
-    </label>
-
-    <label>
-        <input id= "shellfish" type="checkbox" name=""intolerance value="shellfish"> Shellfish
-    </label>
+      <div class="btn-group gap-1" role="group" aria-label="Basic checkbox toggle button group">
+        <input type="checkbox" class="btn-check" id="dairyFree" name="intolerance" value="dairy" autocomplete="off">
+        <label class="btn btn-dark" for="dairyFree">Dairy-Free</label>
+      
+        <input type="checkbox" class="btn-check" id="glutenFree" name="intolerance" value="gluten" autocomplete="off">
+        <label class="btn btn-dark" for="glutenFree">Gluten-Free</label>
+      
+        <input type="checkbox" class="btn-check" id="shellfish" name="intolerance" value="shellfish" autocomplete="off">
+        <label class="btn btn-dark" for="shellfish">Shellfish</label>
+      </div>
     <!-- Add more checkboxes for other intolerances -->
 
-    <button id="generateButton">Generate Recipe</button>
+    <button id="generateButton" class="btn btn-dark">Generate Recipe</button>
     </div>
 
-
-<div class="row mt-5">
+<div class="row mt-5 bg-subtle">
     <div class="col-6">
+        <h1 class="display-6" id="recipe-title"></h1>
         <div id="recipeContainer"></div>
-        <h1 id="recipe-title"></h1>
-        <p id="instructions"></p>  
-    
-        <div id="recipe-image-container"></div>
+        <div id="recipe-image-container" style="box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);"></div>
     </div>
 
     <div class="col-6">
-        <div id="steps-container" style="text-align: start;"></div> <!-- container for recipe instructions -->
-    </div>  
+    <div id="steps-container" style="text-align: start; padding-top: 20px;"><!-- container for recipe instructions --></div>
+    </div>
 </div>
 
 
