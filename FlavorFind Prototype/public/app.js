@@ -18,12 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
       const dairyFree = document.getElementById("dairyFree");
       const shellfish = document.getElementById("shellfish");
       const intolerances = [];
-        if (glutenFree.checked==true)
-          intolerances.push("gluten");
-        if (dairyFree.checked==true)
-          intolerances.push("dairy");
-        if (shellfish.checked==true)
+
+      if (dairyFree.checked==true)
+        intolerances.push("dairy");
+
+      if (shellfish.checked==true)
         intolerances.push("shellfish");
+
+      if (glutenFree.checked==true)
+        intolerances.push("gluten");
+
+      const intoleranceValue = intolerances.join(",");
+      console.log(glutenFree.checked, dairyFree.checked, shellfish.checked);
   
       //This line constructs the URL for the Spoonacular API's complex search endpoint, including the API key, number of recipes, sort order, and selected cuisine.
       const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}&intolerance=${intoleranceValue}`;
