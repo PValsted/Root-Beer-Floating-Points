@@ -20,9 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const intolerances = [];
         if (glutenFree.checked==true)
           intolerances.push("gluten");
+        if (dairyFree.checked==true)
+          intolerances.push("dairy");
+        if (shellfish.checked==true)
+        intolerances.push("shellfish");
   
       //This line constructs the URL for the Spoonacular API's complex search endpoint, including the API key, number of recipes, sort order, and selected cuisine.
-      const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}`;
+      const complexSearchUrl = `${complexSearchEndpoint}?apiKey=${apiKey}&number=${number}&sort=${sort}&cuisine=${selectedCuisine}&intolerance=${intoleranceValue}`;
   
       // Make the GET request to complexSearch
       fetch(complexSearchUrl)
