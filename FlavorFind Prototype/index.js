@@ -1,11 +1,16 @@
-const express = require("express");
+const express = require('express');
+const path = require('path');
 const app = express();
-const path = require("path");
-
-// Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
-
 const port = 3000;
+
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
+// Route for the root path
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'prototype.html'));
+});
+
 app.listen(port, () => {
-  console.log(`Express listening at http://0.0.0.0:${port}`);
+  console.log(`Server running on port ${port}`);
 });

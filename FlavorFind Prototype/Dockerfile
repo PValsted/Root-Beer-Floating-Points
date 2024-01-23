@@ -1,18 +1,23 @@
-FROM node:latest
+# Use an official Node runtime as a parent image
+FROM node:14
 
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json (if available)
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install app dependencies
+# Install any needed packages
 RUN npm install
 
-# Copy the rest of your app's source code
+# Bundle your app's source inside the Docker image
 COPY . .
 
+# Make port 3000 available to the world outside this container
 EXPOSE 3000
 
-ENV NAME FlavorFind
+# Define environment variable
+ENV NODE_ENV production
 
-CMD ["npm", "start"]
+# Run the app when the container launches
+CMD ["node", "index.js"]
