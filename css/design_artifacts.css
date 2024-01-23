@@ -16,11 +16,6 @@ header {
     padding: 40px 20px;
 }
 
-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #product-name {
     margin: 0;
@@ -111,7 +106,7 @@ li{
 }
 
 .feature-list{
-   display: grid;
+    display: grid;
     align-items: center;
     justify-content: center;
     text-align: justify;

@@ -18,8 +18,35 @@
         <ul>
             <li>1. How should the system be organized as a set of architectural components, where each of these components provides a 
                 subset of the overall system functionality?</li>
+                <p>
+                Our system is organized as a four layered model, this can be referenced in the link below. The first and bottom layer represents the 
+                API database, the middle and second layer is the external API, Spoonacular, and the third layer as the backend server that provides 
+                the logic and functionality of our system. Our top and final layer is the user interface that communicates with clients and displays the 
+                functionality of FlavorFind. 
+                </p><br>
+
             <li>2. How should these architectural components be distributed and communicate with each other?</li>
+            <p>
+            Each of our components are distributed independently, the bottom layer API database relays requests from the Spoonacular API
+            and only communicate with each other. Since we have no communication with the API database, if the API database is not available the 
+            software system will no longer be functional. The second layer is Spoonacular API, we created an account to utilize its services and in turn 
+            we are provided documentation of API functions made available to us. Based on the type of account varies the types of services provided. 
+            This layer communicates with the backend component and with the features we've implemented we're able to relay information between the backend and 
+            Spoonacular API. The limitations of this layer are dependent on our account type and the services provided to us. The third component, our backend server 
+            has the logic and functionality to pull information from the Spoonacular API that is based on the API database and relays that information to the top layer, the user
+            interface and client interaction. The backend communicates with the top layer, the user interface, to package information requested by the client. 
+            The top layer is concerned with user interface management, if any lower levels are affected it will lose functionality. 
+            Our system distributes as a client-server architecture, utilizing HTTP protocol, we created a complex search URL that communicates with the 
+            API and relays information to the client. 
+            </p><br>
             <li>3. What technologies should you use in building the system and what components should be reused?</li>
+            <p>
+                Technologies we've implemented into our system are delivery platform and development tools. Our system utilizes a web-based platform and 
+                the development tools applied is a frontend CSS framework, Bootstrap, this component is an open source framework and can be reused. It provided 
+                faster resources than starting from sctrach and displayed a cleaner and comprehensive look for our product. Another reusable source is the external API, Spoonacular, 
+                it helped provide a streamline of services to create the basis of our recipe generator. 
+                
+            </p><br>
             <li>Click to view a diagram of our components <a href="component_interface.html">here.</a></li>
            
 
