@@ -8,7 +8,7 @@ app.use(express.static('public'));
 
 // Route for the root path
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'prototype.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
